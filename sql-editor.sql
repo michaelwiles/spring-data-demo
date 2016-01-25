@@ -1,0 +1,1 @@
+select employee0_.id as id1_1_, employee0_.department_id as departme5_1_, employee0_.employee_id as employee2_1_, employee0_.first_name as first_na3_1_, employee0_.surname as surname4_1_ from employee employee0_ where employee0_.surname=?
