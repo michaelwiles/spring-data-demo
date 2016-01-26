@@ -18,18 +18,21 @@ public class SimpleEmployeeRepository {
     @PersistenceContext
     EntityManager em;
 
-    // employees by name
+    /**
+     * returns employees by surname
+     */
     public List<Employee> findBySurname(String surname) {
-        Query findBySurname = em.createQuery("select p from Employee p  where p.surname = ?1");
-        findBySurname.setParameter(1, surname);
-        return findBySurname.getResultList();
+        Query query = em.createQuery("select e from Employee e where e.surname = ?1");
+        query.setParameter(1, surname);
+        return query.getResultList();
     }
 
-    // employees by team
+    /**
+     * returns all employees in the team with the given name
+     */
     public List<Employee> findByTeamName(String teamName) {
-        Query findBySurname = em.createQuery("select e from Employee e join e.teams t where t.name = ?1");
-        findBySurname.setParameter(1, teamName);
-        return findBySurname.getResultList();
+        return null;
+
     }
 
 }
