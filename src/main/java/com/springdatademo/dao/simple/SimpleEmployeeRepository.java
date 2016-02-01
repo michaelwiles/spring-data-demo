@@ -31,8 +31,9 @@ public class SimpleEmployeeRepository {
      * returns all employees in the team with the given name
      */
     public List<Employee> findByTeamName(String teamName) {
-        return null;
-
+        Query query = em.createQuery("select e from Employee e join e.teams t where t.name = ?1");
+        query.setParameter(1, teamName);
+        return query.getResultList();
     }
 
 }
